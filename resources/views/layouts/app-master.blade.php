@@ -3,20 +3,16 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.87.0">
     <title>Figaro V0.1</title>
 
     <!-- Bootstrap core CSS -->
-
-
-
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
-            :root{--header-height: 3rem;--nav-width: 68px;--first-color: #000000;--first-color-light: #d9d6a5;--white-color: #F7F6FB;--body-font: 'Nunito',
-            sans-serif;--normal-font-size: 1rem;--z-fixed: 100}*,::before,::after{box-sizing: border-box}body{position: relative;margin: var(--header-height) 0 0 0;padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}a{text-decoration: none}
-            .header{margin-bottom: 5px; width: 100%;height: var(--header-height);position: fixed;top: 0;left: 0;display: flex;align-items: center;justify-content: space-between;padding: 0 1rem;background-color: var(--white-color);z-index: var(--z-fixed);transition: .5s}
+            :root{--header-height: 3rem;--nav-width: 68px;--first-color: #000000;--first-color-light: #d9d6a5;--white-color: #bbb792;--body-font: 'Nunito',
+            sans-serif;--normal-font-size: 1rem;--z-fixed: 100}*,::before,::after{box-sizing: border-box}
+            body{position: relative;margin: var(--header-height) 0 0 0;padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}
+            a{text-decoration: none}
+            .header{margin-bottom: 5px; width: 100%;height: var(--header-height);position: relative;top: 0;left: 0;display: flex;align-items: center;justify-content: space-between;padding: 0 1rem;background-color: var(--white-color);z-index: var(--z-fixed);transition: .5s}
             .header_toggle{color: var(--first-color);font-size: 1.5rem;cursor: pointer}
             .header_img{width: 35px;height: 35px;display: flex;justify-content: center;border-radius: 50%;overflow: hidden}
             .header_img img{width: 40px}
@@ -32,16 +28,16 @@
             .active{color: var(--white-color)}
             .active::before{content: '';position: absolute;left: 0;width: 2px;height: 32px;background-color: var(--white-color)}
             .height-100{height:100vh}
-            @media screen and (min-width: 768px){body{margin: calc(var(--header-height) + 1rem) 0 0 0;padding-left: calc(var(--nav-width) + 2rem)}
-                .header{height: calc(var(--header-height) + 1rem);padding: 0 2rem 0 calc(var(--nav-width) + 2rem)}
+            @media screen and (min-width: 768px){body{margin: calc(var(--header-height) + 1rem) 0 0 0;padding-left: calc(var(--nav-width))}
+                .header{height: calc(var(--header-height) + 1rem);padding: 0 2rem 0 calc(var(--nav-width))}
                 .header_img{width: 40px;height: 40px}
                 .header_img img{width: 45px}
-                .l-navbar{left: 0;padding: 1rem 1rem 0 0}.show{width: calc(var(--nav-width) + 156px)}.body-pd{padding-left: calc(var(--nav-width) + 188px)}}
+                .l-navbar{left: 0;padding: 1rem 1rem 0 0}.show{width: calc(var(--nav-width) + 155px)}.body-pd{padding-left: calc(var(--nav-width) + 155px)}}
+
         </style>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-
 
     <!-- Custom styles for this template -->
 
@@ -49,29 +45,45 @@
 
 <body id="body-pd">
 
+@section('header')
 
-<header class="header" id="header">
-    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-    <div class="header_img"> <img src="{!! url('img/cat.jpg') !!}" alt="" > </div>
-</header>
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="{!! url('img/cat.jpg') !!}" alt="" > </div>
+    </header>
+
+@show
+
+@section('sidebar')
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">
         <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">FIGARO</span> </a>
-            <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
-        </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-    </nav>
+            <div class="nav_list">
+                <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
+                    <span class="nav_name">Dashboard</span> </a>
+                <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
+                <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a>
+                <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a>
+                <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
+                <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a>
+            </div>
+        </div>
+
+        @auth()
+        {{auth()->user()->name}}
+        <a href="{{ route('logout.perform') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        @endauth
+
+     </nav>
 </div>
+@show
 <!--Container Main start-->
-<main class="height-100">
-
-
-       @yield('content')
-
+<main>
+    <div class="height-100">
+           @yield('content')
+    </div>
 </main>
 <!--Container Main end-->
-
-
-
         <script>
             document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -81,16 +93,16 @@
                         bodypd = document.getElementById(bodyId),
                         headerpd = document.getElementById(headerId)
 
-// Validate that all variables exist
+                    // Validate that all variables exist
                     if(toggle && nav && bodypd && headerpd){
                         toggle.addEventListener('click', ()=>{
-// show navbar
+                            // show navbar
                             nav.classList.toggle('show')
-// change icon
+                            // change icon
                             toggle.classList.toggle('bx-x')
-// add padding to body
+                            // add padding to body
                             bodypd.classList.toggle('body-pd')
-// add padding to header
+                            // add padding to header
                             headerpd.classList.toggle('body-pd')
                         })
                     }
@@ -112,8 +124,8 @@
                 // Your code to run since DOM is loaded and ready
             });
         </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   </body>
 </html>
